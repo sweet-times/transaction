@@ -206,7 +206,7 @@ function() {
 Ongkos kirim ${deliveryFeeRupiah}<br>
 *Total ${grandTotalRupiah}*<br><br>
         
-Untuk pembayaran silahkan transfer ke:<br>
+Pembayaran silahkan transfer ke:<br>
 BCA 3191954431<br>
 Harijono<br><br>
         
