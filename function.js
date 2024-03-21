@@ -4,8 +4,8 @@ export function addRow(data) {
 
     for (let i = 0; i < data.length; i++) {
         const row = `
-            <tr>
-                <td>${data[i]}</td>
+            <tr id="${data[i]}Tag">
+                <td class="productName">${data[i]}</td>
                 <td>
                     <div class="wrapper">
                         <button class="counter" onclick="
@@ -195,7 +195,28 @@ export function totalPurchaseCalc(quantityInput, finalPriceList) {
 
     console.log(totalPurchaseArray);
     console.log({'Total Purchase': totalPrice})
-    return totalPrice;
+
+    return {
+        'Total': totalPrice,
+        "Subtotal": totalPurchaseArray
+    };
+}
+
+// Subtotal
+export function subtotalCalc(subtotal) {
+    const purchasedItemsList = Object.keys(subtotal);
+
+    for (let i = 0; i < purchasedItemsList.length; i++) {
+        const item = purchasedItemsList[i]
+        let itemPrice = subtotal[item]['Subtotal'];
+
+        // Format to IDR
+        itemPrice = formatIDR(itemPrice);
+        console.log(item);
+
+        // Display Subtotal
+        document.getElementById(item + 'Subtotal').innerHTML = itemPrice;
+    }
 }
 
 // Grand Total

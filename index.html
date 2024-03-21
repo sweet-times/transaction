@@ -8,12 +8,19 @@
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
-    <h1>
-        <div class="documentHeader">
-            <img id="logo" src="logo.png">
-            Transaction Calculator
-        </div>
-    </h1>
+    <header>
+        <h1>
+            <div class="documentHeader">
+                <img id="logo" src="logo.png">
+                Transaction Calculator
+            </div>
+        </h1>
+    </header>
+    <div class="searchBar">
+        <input type="text" id="filter" onkeyup="filterTable()" placeholder="Search...">
+        <button id="clearFilter" onclick="clearFilter()">×</button>
+    </div>
+    <div class="block"></div>
     <table>
         <tr>
             <th>Product</th>
@@ -24,16 +31,16 @@
             <!-- In JavaScript -->
         </tbody>
     </table>
-    <label for="priceCode">Customer Price Code:</label>
+    <label class="content" for="priceCode">Customer Price Code:</label>
     <select id="priceCode">
         <option>Select</option>
         <!-- In JavaScript -->
     </select>
-    <br>
-    <label for="deliveryFee">Delivery Fee:</label>
+    <br><br>
+    <label class="content" for="deliveryFee">Delivery Fee:</label>
     <input type="text" id="deliveryFee" value="15000">
     <br>
-    <button id="calc">Calculate Price</button>
+    <button class="content" id="calc">Calculate Price</button>
     <p class="lastElement">
         Total price: 
         <span id="totalPrice">
@@ -41,5 +48,6 @@
         </span>
     </p>
     <script src="main.js" type="module"></script>
+    <script src="filter.js"></script>
 </body>
 </html>

@@ -16,8 +16,14 @@ import {
     totalPurchaseCalc,
     grandTotalCalc,
     formatIDR,
-    copyToClipboard
+    copyToClipboard,
+    subtotalCalc
 } from './function.js';
+
+// Test
+function whatFunction() {
+    console.log('test');
+};
 
 // Product List Table Content
 addRow(productList);
@@ -48,8 +54,11 @@ function buttonClick() {
     // Missing Price Alert and Input
     const finalPriceList = missingPrice(priceList, priceCodeInput, quantityInput);
 
+    // Subtotal
+    let subtotal = totalPurchaseCalc(quantityInput, finalPriceList)['Subtotal'];
+
     // Total Purchase
-    let totalPurchase = totalPurchaseCalc(quantityInput, finalPriceList);
+    let totalPurchase = totalPurchaseCalc(quantityInput, finalPriceList)['Total'];
 
     // Grand Total
     let grandTotal = grandTotalCalc(totalPurchase, deliveryFeeInput);
@@ -58,6 +67,9 @@ function buttonClick() {
     totalPurchase = formatIDR(totalPurchase);
     deliveryFeeInput = formatIDR(deliveryFeeInput);
     grandTotal = formatIDR(grandTotal);
+
+    // Display Subtotal
+    subtotalCalc(subtotal);
 
     // Display Grand Total
     document.getElementById('totalPrice').innerHTML = grandTotal;
