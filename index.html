@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Times</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <h1>
+        <div class="documentHeader">
+            <img id="logo" src="logo.png">
+            Transaction Calculator
+        </div>
+    </h1>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+        <tbody id="productListTable">
+            <!-- In JavaScript -->
+        </tbody>
+    </table>
+    <label for="priceCode">Customer Price Code:</label>
+    <select id="priceCode">
+        <option>Select</option>
+        <!-- In JavaScript -->
+    </select>
+    <br>
+    <label for="deliveryFee">Delivery Fee:</label>
+    <input type="text" id="deliveryFee" value="15000">
+    <br>
+    <button id="calc">Calculate Price</button>
+    <p class="lastElement">
+        Total price: 
+        <span id="totalPrice">
+            <!-- In JavaScript -->
+        </span>
+    </p>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
