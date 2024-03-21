@@ -35,6 +35,9 @@ function buttonClick() {
     // Get and Validate User Inputs
     // Price Code
     const priceCodeInput = priceCodeValidation(priceList);
+    
+    // Delivery Fee
+    let deliveryFeeInput = deliveryFeeValidation();
 
     // Quantity
     const quantityInput = quantityValidation(productList);
@@ -47,9 +50,6 @@ function buttonClick() {
 
     // Total Purchase
     let totalPurchase = totalPurchaseCalc(quantityInput, finalPriceList);
-
-    // Delivery Fee
-    let deliveryFeeInput = deliveryFeeValidation();
 
     // Grand Total
     let grandTotal = grandTotalCalc(totalPurchase, deliveryFeeInput);
