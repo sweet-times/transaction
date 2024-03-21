@@ -72,6 +72,20 @@ export function priceCodeValidation(priceList) {
     }
 }
 
+// Delivery Fee
+export function deliveryFeeValidation() {
+    const deliveryFee = Number(document.getElementById('deliveryFee').value);
+
+    // Validation
+    if (Number.isInteger(deliveryFee)) {
+        console.log({'Delivery Fee': deliveryFee});
+        return deliveryFee;        
+    } else {
+        alert('Please enter valid delivery fee.');
+        throw 'Delivery fee invalid.';
+    }
+}
+
 // Quantity
 export function quantityValidation(productList) {
     let quantityArray = {};
@@ -117,6 +131,7 @@ Price Code: ${priceCodeInput}\n\n`;
     if (!confirmation)
         throw 'Order not confirmed.'
 }
+
 // Missing Price Alert and Input
 export function missingPrice(priceList, priceCodeInput, quantityInput) {
     const purchasedItemsList = Object.keys(quantityInput);
@@ -135,11 +150,22 @@ export function missingPrice(priceList, priceCodeInput, quantityInput) {
             alert(`Error: missing price for ${item}.`);
 
             // Price Manual Input
-            itemPrice = Number(prompt(`Enter price for ${item}:`));
+            itemPrice = prompt(`Enter price for ${item}:`)
 
-            while (isNaN(itemPrice) || itemPrice == 0) {
-                itemPrice = Number(prompt('Please enter a valid number.'));
-                continue;
+            // Validation
+            while (true) {
+                if (itemPrice == null) {
+                    throw 'Price input cancelled.';
+                } else if (itemPrice == '') {
+                    itemPrice = prompt('Input cannot be empty.');
+                    continue;
+                } else if (isNaN(itemPrice)) {
+                    itemPrice = prompt('Please enter a valid number.');
+                    continue;
+                } else {
+                    itemPrice = Number(itemPrice);
+                    break;
+                }
             }
         }
 
@@ -170,20 +196,6 @@ export function totalPurchaseCalc(quantityInput, finalPriceList) {
     console.log(totalPurchaseArray);
     console.log({'Total Purchase': totalPrice})
     return totalPrice;
-}
-
-// Delivery Fee
-export function deliveryFeeValidation() {
-    const deliveryFee = Number(document.getElementById('deliveryFee').value);
-
-    // Validation
-    if (Number.isInteger(deliveryFee)) {
-        console.log({'Delivery Fee': deliveryFee});
-        return deliveryFee;        
-    } else {
-        alert('Please enter valid delivery fee.');
-        throw 'Delivery fee invalid.';
-    }
 }
 
 // Grand Total

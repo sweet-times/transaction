@@ -10,10 +10,10 @@ import {
     priceCodeDropDown,
     priceCodeValidation,
     quantityValidation,
+    deliveryFeeValidation,
     orderConfirmation,
     missingPrice,
     totalPurchaseCalc,
-    deliveryFeeValidation,
     grandTotalCalc,
     formatIDR,
     copyToClipboard
@@ -35,12 +35,12 @@ function buttonClick() {
     // Get and Validate User Inputs
     // Price Code
     const priceCodeInput = priceCodeValidation(priceList);
-    
-    // Delivery Fee
-    let deliveryFeeInput = deliveryFeeValidation();
 
     // Quantity
     const quantityInput = quantityValidation(productList);
+
+    // Delivery Fee
+    let deliveryFeeInput = deliveryFeeValidation();
 
     // Order Confirmation
     orderConfirmation(priceCodeInput, quantityInput);
