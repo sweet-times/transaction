@@ -276,5 +276,5 @@ Terima kasih atas pemesanan produk *Sweet Times*`;
     }
 
     // Delay Opacity Drop
-    setTimeout(dropInterval, 250);
+    setTimeout(dropInterval, 500);
 }
