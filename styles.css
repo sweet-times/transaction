@@ -4,12 +4,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #36454F;
 }
-#logo {
-    width: 100px;
-    margin-right: 15px;
-}
-h1 {
-    white-space: nowrap;
+body {
+    font-size: large;
+    background-color: #FEF8F8;
 }
 .documentHeader {
     display: flex;
@@ -18,18 +15,28 @@ h1 {
     padding-bottom: 0;
     background-color: #FFE9EC;
 }
+#logo {
+    width: 100px;
+    margin-right: 15px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+h1 {
+    white-space: nowrap;
+}
 .searchBar {
     display: flex;
     align-items: center;
-    padding: 20px;
-    background-color: #FFE9EC;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
+    padding: 20px;
+    background-color: #FFE9EC;
 }
 #filter {
     width: 400px;
-    max-width: 80%;
+    max-width: 90%;
     padding: 10px;
     padding-left: 50px;
     border: none;
@@ -44,8 +51,8 @@ h1 {
     height: 40px;
     margin-left: -40px;
     padding-bottom: 3px;
-    border: none;
     font-size: 20px;
+    border: none;
     color: darkgrey;
     background-color: transparent;
     cursor: pointer;
@@ -56,27 +63,11 @@ h1 {
     position: -webkit-sticky;
     top: 80px;
     background-color: #FEF8F8;
-}
-.border {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 100px;
-    width: 800px;
-    max-width: 95%;
-    margin: 20px;
-    padding: 5px;
-    margin-top: 0;
-    margin-bottom: 0;
-    border: 2px solid black;
-
-}
-body {
-    font-size: large;
-    background-color: #FEF8F8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px inset;
 }
 table {
     width: 800px;
-    max-width: 90%;
+    max-width: 95%;
     margin: 20px;
     margin-top: 0;
     border-left: 1px solid #F4C2C2;
@@ -91,20 +82,20 @@ th {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border: 1px solid #F4C2C2;
+    border-left: 1px solid #F4C2C2;
+    border-right: 1px solid #F4C2C2;
     border-top: 2px solid #F4C2C2;
     border-bottom: 2px solid #F4C2C2;
     background-color: #FFE9EC;
 }
 td {
-    border-bottom: 2px solid #F4C2C2;
-    border-left: 1px solid #F4C2C2;
-    border-right: 1px solid #F4C2C2;
-    border-spacing: 0px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-bottom: 2px solid #F4C2C2;
+    border-left: 1px solid #F4C2C2;
+    border-right: 1px solid #F4C2C2;
 }
 .wrapper {
     width: 180px;
@@ -123,24 +114,25 @@ td {
     display: flex;
     text-align: center;
     justify-content: center;
+    margin: 0;
     border: none;
     border-left: 1px solid #36454F;
     border-right: 1px solid #36454F;
-    margin: 0;
     font-size: large;
     background-color: transparent;
 }
 .counter {
     width: 200%;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
     margin: 0;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    border: none;
     cursor: pointer;
     user-select: none;
     background-color: transparent;
@@ -149,6 +141,8 @@ td {
     float: right;
 }
 .content {
+    width: 800px;
+    max-width: 95%;
     margin: 20px;
 }
 select {
@@ -158,6 +152,7 @@ select {
     border-radius: 100px;
     padding-left: 10px;
     padding-right: 10px;
+    appearance: none;
     font-size: medium;
     cursor: pointer;
     background-color: #FFE9EC;
@@ -165,30 +160,28 @@ select {
 #deliveryFee {
     width: 130px;
     height: 30px;
-    border: none;
-    border-radius: 100px;
+    text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+    border: none;
+    border-radius: 100px;
     font-size: medium;
-    text-align: center;
     cursor: pointer;
     background-color: #FFE9EC;
 }
 #calc {
     width: 150px;
     height: 30px;
-    border: none;
-    border-radius: 100px;
     padding-left: 10px;
     padding-right: 10px;
+    border: none;
+    border-radius: 100px;
     font-size: medium;
     cursor: pointer;
     background-color: #FFE9EC;
 }
-.lastElement {
-    margin: 20px;
-    margin-top: 0;
-    padding-bottom: 10%;
+#lastElement {
+    padding-bottom: 25vh;
 }
 #popUpMessage {
     width: fit-content;
@@ -196,11 +189,124 @@ select {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 10px;
     border: none;
     border-radius: 15px;
-    padding: 10px;
     user-select: none;
     color:#FDFDFD;
     background-color: black;
     opacity: 0.5;
+}
+
+#filter, .wrapper, select, #deliveryFee, #calc {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+@media (min-height: 800px) {
+    body {
+        font-size: x-large;
+        font-weight: 300;
+    }
+    .documentHeader {
+        padding: 1vh;
+        padding-bottom: 0;
+    }
+    #logo {
+        width: 20vw;
+        margin-right: 2vw;
+        border-radius: 2vw;
+    }
+    h1 {
+        font-size: 3vh;
+    }
+    .searchBar {
+        margin: auto;
+        padding: 1vh;
+    }
+    #filter {
+        width: 75vw;
+        margin-left: 0;
+        margin: auto;
+        padding: 2vh;
+        padding-left: 13vw;
+        background-size: 2.5vh;
+        background-position: 2.5vh;
+        font-size: 1.8vh;
+    }
+    #clearFilter {
+        width: 6vh;
+        height: 6vh;
+        margin-left: -6vh;
+        padding-bottom: 0;
+        font-size: 3vh;
+    }
+    .block {
+        height: 2vh;
+        top: 8vh;
+    }
+    table {
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th {
+        top: 10vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
+    td {
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
+    .wrapper {
+        width: 40vw;
+        height: 5vh;
+    }
+    .dataInput {
+        width: 14vw;
+        height: 4vh;
+        font-size: xx-large;
+        font-weight: 300;
+    }
+    .counter {
+        width: 13vw;
+        height: 5vh;
+        font-size: xx-large;
+        font-weight: 300;
+    }
+    select {
+        width: 40vw;
+        height: 5vh;
+        padding-left: 4vw;
+        font-size: x-large;
+        font-weight: 350;
+    }
+    #deliveryFee {
+        width: 40vw;
+        height: 5vh;
+        font-size: x-large;
+        font-weight: 350;
+    }
+    #calc {
+        width: 40vw;
+        height: 5vh;
+        font-size: x-large;
+        font-weight: 350;
+    }
+}
+
+@media (max-width: 800px) {
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content {
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

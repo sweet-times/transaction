@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=600, initial-scale=0.6, minimum-scale=0.6">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
     <title>Sweet Times</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo.png">
@@ -11,7 +11,9 @@
     <header>
         <h1>
             <div class="documentHeader">
-                <img id="logo" src="logo.png">
+                <div>
+                    <img id="logo" src="logo.png">
+                </div>
                 Transaction Calculator
             </div>
         </h1>
@@ -31,22 +33,28 @@
             <!-- In JavaScript -->
         </tbody>
     </table>
-    <label class="content" for="priceCode">Customer Price Code:</label>
-    <select id="priceCode">
-        <option>Select</option>
-        <!-- In JavaScript -->
-    </select>
-    <br><br>
-    <label class="content" for="deliveryFee">Delivery Fee:</label>
-    <input type="text" id="deliveryFee" value="15000">
-    <br>
-    <button class="content" id="calc">Calculate Price</button>
-    <p class="lastElement">
-        Total price: 
-        <span id="totalPrice">
+    <div class="content">
+        <label for="priceCode">Customer Price Code:</label>
+        <select id="priceCode">
+            <option>Select</option>
             <!-- In JavaScript -->
-        </span>
-    </p>
+        </select>
+    </div>
+    <div class="content">
+        <label for="deliveryFee">Delivery Fee:</label>
+        <input type="text" id="deliveryFee" value="15000">
+    </div>
+    <div class="content">
+        <button id="calc">Calculate Price</button>
+    </div>
+    <div class="content" id="lastElement">
+        <p>
+            Total price: 
+            <span id="totalPrice">
+                <!-- In JavaScript -->
+            </span>
+        </p>
+    </div>
     <script src="main.js" type="module"></script>
     <script src="filter.js"></script>
 </body>
