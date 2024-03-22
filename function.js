@@ -72,20 +72,6 @@ export function priceCodeValidation(priceList) {
     }
 }
 
-// Delivery Fee
-export function deliveryFeeValidation() {
-    const deliveryFee = Number(document.getElementById('deliveryFee').value);
-
-    // Validation
-    if (Number.isInteger(deliveryFee)) {
-        console.log({'Delivery Fee': deliveryFee});
-        return deliveryFee;        
-    } else {
-        alert('Please enter valid delivery fee.');
-        throw 'Delivery fee invalid.';
-    }
-}
-
 // Quantity
 export function quantityValidation(productList) {
     let quantityArray = {};
@@ -108,6 +94,20 @@ export function quantityValidation(productList) {
     } else {
         console.log(quantityArray);
         return quantityArray;
+    }
+}
+
+// Delivery Fee
+export function deliveryFeeValidation() {
+    const deliveryFee = Number(document.getElementById('deliveryFee').value);
+
+    // Validation
+    if (Number.isInteger(deliveryFee)) {
+        console.log({'Delivery Fee': deliveryFee});
+        return deliveryFee;        
+    } else {
+        alert('Please enter valid delivery fee.');
+        throw 'Delivery fee invalid.';
     }
 }
 
@@ -212,7 +212,6 @@ export function subtotalCalc(subtotal) {
 
         // Format to IDR
         itemPrice = formatIDR(itemPrice);
-        console.log(item);
 
         // Display Subtotal
         document.getElementById(item + 'Subtotal').innerHTML = itemPrice;

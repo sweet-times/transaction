@@ -5,8 +5,7 @@ function filterTable() {
     for (let i = 0; i < productList.length; i++) {
         const itemName = productList[i].innerHTML;
 
-        elementTag = document.getElementById(itemName + 'Tag');
-        console.log(itemName + 'Tag');
+        const elementTag = document.getElementById(itemName + 'Tag');
         
         if (itemName.toUpperCase().indexOf(input) > -1) {
             elementTag.style.display = '';

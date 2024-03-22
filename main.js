@@ -54,11 +54,14 @@ function buttonClick() {
     // Missing Price Alert and Input
     const finalPriceList = missingPrice(priceList, priceCodeInput, quantityInput);
 
+    // Purchase Price Details
+    const priceDetails = totalPurchaseCalc(quantityInput, finalPriceList);
+
     // Subtotal
-    let subtotal = totalPurchaseCalc(quantityInput, finalPriceList)['Subtotal'];
+    let subtotal = priceDetails['Subtotal'];
 
     // Total Purchase
-    let totalPurchase = totalPurchaseCalc(quantityInput, finalPriceList)['Total'];
+    let totalPurchase = priceDetails['Total'];
 
     // Grand Total
     let grandTotal = grandTotalCalc(totalPurchase, deliveryFeeInput);
@@ -73,6 +76,22 @@ function buttonClick() {
 
     // Display Grand Total
     document.getElementById('totalPrice').innerHTML = grandTotal;
+
+    // Filter Purchased Items
+    const purchasedItemsList = Object.keys(finalPriceList);
+    document.getElementById('filter').value = '';
+
+    for (let i = 0;  i < productList.length; i++) {
+        const itemName = productList[i];
+
+        const elementTag = document.getElementById(itemName + 'Tag');
+
+        if (purchasedItemsList.includes(itemName)) {
+            elementTag.style.display = '';
+        } else {
+            elementTag.style.display = 'none';
+        }
+    }
 
     // Copy Message to Clipboard
     copyToClipboard(totalPurchase, deliveryFeeInput, grandTotal);
