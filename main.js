@@ -49,7 +49,7 @@ function buttonClick() {
     let deliveryFeeInput = deliveryFeeValidation();
 
     // Order Confirmation
-    orderConfirmation(priceCodeInput, quantityInput);
+    // orderConfirmation(priceCodeInput, quantityInput);
     
     // Missing Price Alert and Input
     const finalPriceList = missingPrice(priceList, priceCodeInput, quantityInput);
@@ -91,6 +91,18 @@ function buttonClick() {
         } else {
             elementTag.style.display = 'none';
         }
+    }
+
+    // Display Order Details
+    const block = document.getElementById('block');
+    block.innerHTML = '<b>Order Details:</b>';
+    block.classList.add('blockDrop');
+
+    // Adjust Table Position
+    const headers = document.getElementsByTagName('th');
+
+    for (let i = 0; i < headers.length; i++) {
+        headers[i].classList.add('tableDrop');
     }
 
     // Copy Message to Clipboard

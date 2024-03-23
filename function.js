@@ -8,7 +8,7 @@ export function addRow(data) {
                 <td class="productName">${data[i]}</td>
                 <td>
                     <div class="wrapper">
-                        <button class="counter" onclick="
+                        <button class="counter decrement" onclick="
                             let currentValue = Number(document.getElementById('${data[i]}').value);
                             let newValue = 0;
                             
@@ -21,7 +21,7 @@ export function addRow(data) {
                             −
                         </button>
                         <input type="text" class="dataInput" id="${data[i]}" value="0">
-                        <button class="counter" onclick="
+                        <button class="counter increment" onclick="
                             let currentValue = Number(document.getElementById('${data[i]}').value);
                             let newValue = 0;
                             
@@ -112,6 +112,7 @@ export function deliveryFeeValidation() {
 }
 
 // Order Confirmation
+
 export function orderConfirmation(priceCodeInput, quantityInput) {
     const purchasedItemsList = Object.keys(quantityInput);
 

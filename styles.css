@@ -1,3 +1,4 @@
+/* Static Styling*/
 * {
     margin: 0;
     padding: 0;
@@ -61,13 +62,19 @@ h1 {
     opacity: 0.3;
     cursor: pointer;
 }
-.block {
+#block {
     height: 20px;
     position: sticky;
     position: -webkit-sticky;
     top: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
     background-color: #FEF8F8;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px inset;
+}
+.blockDrop {
+    height: 60px !important;
 }
 table {
     width: 800px;
@@ -91,6 +98,9 @@ th {
     border-top: 2px solid #F4C2C2;
     border-bottom: 2px solid #F4C2C2;
     background-color: #FFE9EC;
+}
+.tableDrop {
+    top: 140px !important;
 }
 td {
     padding-left: 10px;
@@ -140,6 +150,14 @@ td {
     cursor: pointer;
     user-select: none;
     background-color: transparent;
+}
+.decrement {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.increment {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .subtotal {
     float: right;
@@ -248,9 +266,12 @@ select {
         margin-left: -18vw;
         padding: 2.1vh;
     }
-    .block {
+    #block {
         height: 2vh;
         top: 8vh;
+    }
+    .blockDrop {
+        height: 6vh !important;
     }
     table {
         width: 95vw;
@@ -263,6 +284,9 @@ select {
         padding-right: 2vw;
         padding-top: 1vh;
         padding-bottom: 1vh;
+    }
+    .tableDrop {
+        top: 14vh !important;
     }
     td {
         padding-left: 2vw;
@@ -285,6 +309,14 @@ select {
         height: 5vh;
         font-size: xx-large;
         font-weight: 300;
+    }
+    .decrement {
+        border-top-left-radius: 2.5vh;
+        border-bottom-left-radius: 2.5vh;
+    }
+    .increment {
+        border-top-right-radius: 2.5vh;
+        border-bottom-right-radius: 2.5vh;
     }
     select {
         width: 40vw;
@@ -317,4 +349,22 @@ select {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+/* Dynamic Styling*/
+@media (hover: hover) and (pointer: fine) {
+    .counter:hover, select:hover, #deliveryFee:hover, #calc:hover {
+        transition-duration: 250ms;
+        transition-timing-function: ease;
+        background-color:#FFE2E6;
+    }
+}
+
+.counter, select, #deliveryFee, #calc {
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+}
+.counter:active, select:active, #deliveryFee:active, #calc:active {
+    transition-duration: 50ms;
+    background-color:#FFDBE0;
 }

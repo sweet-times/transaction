@@ -13,6 +13,18 @@ function filterTable() {
             elementTag.style.display = 'none';
         }
     }
+
+    // Clear Order Details
+    const block = document.getElementById('block');
+    block.innerHTML = '';
+    block.classList.remove('blockDrop');
+
+    // Adjust Table Position
+    const headers = document.getElementsByTagName('th');
+
+    for (let i = 0; i < headers.length; i++) {
+        headers[i].classList.remove('tableDrop');
+    }
 }
 
 function clearFilter() {
