@@ -31,3 +31,8 @@ function clearFilter() {
     document.getElementById('filter').value = '';
     filterTable();
 }
+
+// Hide Virtual Keyboard On Touch Move
+document.addEventListener('touchmove', () => {
+    document.getElementById('filter').blur();
+})
